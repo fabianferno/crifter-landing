@@ -67,8 +67,12 @@ function CaseStudies({
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
-    <>
-      <SectionIntro title="Offline Cohorts" className="mt-24 sm:mt-32 lg:mt-40">
+    <div className="mt-24 bg-neutral-950 pb-12 pt-2">
+      <SectionIntro
+        invert
+        title="Offline Cohorts"
+        className="mt-5 sm:mt-32 lg:mt-40"
+      >
         <p>
           Imagine, you are traveling for 15 days together with your favorite
           content creator learning by creating stuff. Here’s a interesting
@@ -80,7 +84,7 @@ function CaseStudies({
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-zinc-800 transition hover:bg-neutral-900 sm:p-8">
                 <h3>
                   <Link href={caseStudy.href}>
                     <span className="absolute inset-0 rounded-3xl" />
@@ -95,13 +99,13 @@ function CaseStudies({
                   </Link>
                 </h3>
 
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold text-zinc-100">
                   {caseStudy.title}
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base text-neutral-500">
                   {caseStudy.description}
                 </p>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                <p className="mt-6 flex gap-x-2 text-sm text-zinc-400">
                   {/* <time
                     dateTime={caseStudy.date.split('-')[0]}
                     className="font-semibold"
@@ -123,7 +127,7 @@ function CaseStudies({
           ))}
         </FadeInStagger>
       </Container>
-    </>
+    </div>
   )
 }
 
@@ -210,7 +214,7 @@ export default async function Home() {
         </FadeIn>
       </Container>
 
-      <Clients />
+      {/* <Clients /> */}
 
       <CaseStudies caseStudies={caseStudies} />
 
@@ -218,9 +222,7 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
-        The team at Crifter went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
+        Crifter team helped me in my dream. Insert more testmonial here.
       </Testimonial>
 
       <Services />
